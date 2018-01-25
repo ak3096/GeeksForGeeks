@@ -1,18 +1,23 @@
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 int main() {
 	//code
 	int testCase;
 	int arraySize;
-	int array[30];
-	int largest=0;
-	int secLargest=0;
 	cin>>testCase;
-	cin>>arraySize;
-	
-	
+
+
+	int array[3000];
+	int largest=0;
+
+
 	while(testCase!=0){
+	     int largest=0;
+       int secLargest=0;
+	    cin>>arraySize;
+
+
 	    for(int i=0;i<arraySize;i++){
 	        cin>>array[i];            //input
 	    }
@@ -23,16 +28,17 @@ int main() {
 	    }
 	    for(int k=0;k<arraySize;k++){  //second Largest
 	        if(array[k]<largest){
-	            secLargest=array[k];
+                    if(array[k]>secLargest){
+	                secLargest=array[k];
+                }
 	        }
 	    }
-	    
+
 	    cout<<secLargest<<endl;
-	    cout<<largest;
-	    
-	
+
+
 	    testCase--;
 	}
-	
+
 	return 0;
 }
